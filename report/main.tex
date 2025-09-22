@@ -15,7 +15,12 @@
 \begin{document}
 
 % 自定义标题页眉（不使用\maketitle）
+\maketitle
 \thispagestyle{fancy}
+
+% 生成目录
+\tableofcontents
+\newpage
 
 \section{Images and Tables}
 
@@ -65,5 +70,28 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
     \item \textcolor{secondarycolor}{次要颜色 (Secondary Color)}
     \item \textcolor{accentcolor}{强调颜色 (Accent Color)}
 \end{itemize}
+
+\begin{note}
+    \textbf{侧边栏：} 这是一个侧边栏，用于显示重要信息~\cite{key}。
+\end{note}
+
+\begin{note}[accentcolor]
+    \textbf{橙色边框：} 这是使用强调颜色的note。
+\end{note}
+
+\begin{note}[secondarycolor]
+    \textbf{蓝色边框：} 这是使用次要颜色的note。
+\end{note}
+
+\begin{note}[red]
+    \textbf{红色边框：} 这是使用红色的note。
+\end{note}
+
+\begin{note}[blue!80!black]
+    \textbf{深蓝色边框：} 这是使用深蓝色的note。
+\end{note}
+
+\bibliographystyle{plain}
+\bibliography{ref}
 
 \end{document}

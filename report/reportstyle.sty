@@ -62,6 +62,30 @@
 \RequirePackage{xcolor}
 \RequirePackage{caption}
 
+% 超链接支持 (必须在最后加载)
+\RequirePackage{hyperref}
+
+% 超链接配置
+\hypersetup{
+    colorlinks=true,           % 使用彩色链接而不是边框
+    linkcolor=linkcolor,    % 内部链接颜色（目录、引用等）
+    urlcolor=blue,            % URL链接颜色
+    citecolor=citecolor, % 引用链接颜色
+    filecolor=magenta,        % 文件链接颜色
+    bookmarksnumbered=true,   % 书签中显示章节编号
+    bookmarksopen=true,       % 打开时展开书签
+}
+
+% 在文档开始时设置PDF元数据的命令
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle={\@title},    % 使用文档的标题
+        pdfauthor={\@author}, % 使用文档的作者
+        pdfsubject={Report},      % PDF主题
+        pdfkeywords={LaTeX, Report, Template} % PDF关键词
+    }
+}
+
 % 页面几何设置
 \geometry{
     left=2.5cm,
@@ -81,7 +105,7 @@
 \newcommand{\setreportheader}[2]{%
     \lhead{#1}%
     \rhead{#2}%
-    \cfoot{\thepage\ / \pageref{LastPage}}%  % 显示当前页/总页数
+    \cfoot{\thepage\ / \pageref*{LastPage}}%  % 显示当前页/总页数（无链接）
 }
 
 % 添加最后一页标签的包
@@ -103,7 +127,8 @@
 \definecolor{primarycolor}{RGB}{0,128,128}   % 青绿色
 \definecolor{secondarycolor}{RGB}{70,130,180} % 钢蓝色
 \definecolor{accentcolor}{RGB}{255,165,0}    % 橙色
-
+\definecolor{linkcolor}{RGB}{0,128,255}    % 天蓝色
+\definecolor{citecolor}{RGB}{128,128,128} % 灰色
 % 自定义节标题样式
 \RequirePackage{titlesec}
 \titleformat{\section}
@@ -152,6 +177,28 @@
     innertopmargin=10pt,
     innerbottommargin=10pt
 ]{successbox}
+
+% 带颜色参数的note环境
+\RequirePackage{xparse}
+\NewDocumentEnvironment{note}{O{primarycolor}}{%
+    \begin{mdframed}[
+            backgroundcolor=gray!5,
+            linecolor=#1,
+            linewidth=3pt,
+            leftline=true,
+            rightline=false,
+            topline=false,
+            bottomline=false,
+            leftmargin=20pt,
+            rightmargin=10pt,
+            innertopmargin=10pt,
+            innerbottommargin=10pt,
+            innerleftmargin=15pt,
+            innerrightmargin=10pt
+        ]
+        }{%
+    \end{mdframed}
+}
 
 % 自定义命令
 % 高亮文本命令
