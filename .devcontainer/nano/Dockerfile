@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends --no-install-su
     wget \
     make \
     fonts-noto-cjk \
+    libfontconfig1 \
     perl \
     perl-base \
     perl-modules \
