@@ -20,10 +20,11 @@ RUN rm ${FILE_NAME}
 ENV PATH="/usr/local/.TinyTeX/bin/x86_64-linux:${PATH}"
 
 # tectonic
-RUN wget https://drop-sh.fullyjustified.net -O install.sh --no-check-certificate
-RUN chmod +x install.sh
-RUN ./install.sh
-RUN mv tectonic /usr/local/bin/
+
+ARG TECTONIC_VERSION=0.15.0
+RUN wget https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz -O ${TECTONIC_VERSION}.tar.gz
+RUN tar -xzf ${TECTONIC_VERSION}.tar.gz -C /usr/local/bin/
+RUN rm ${TECTONIC_VERSION}.tar.gz
 ENV PATH="/usr/local/bin:${PATH}"
 
 RUN tlmgr update --self --all
