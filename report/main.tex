@@ -28,18 +28,34 @@
 
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 
-
+\begin{table}[H]
+\centering
+\caption{Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.}
+\label{tab:test_results}
+\begin{tabular}{@{}cccccccc@{}}
+\toprule
+\textbf{Test Nr.} & \textbf{Position} & \textbf{Radius} & \textbf{Rot} & \textbf{Grün} & \textbf{Blau} & \textbf{beste Fitness} & \textbf{Abweichung} \\
+\midrule
+1 & 20\% & 20\% & 20\% & 20\% & 20\% & 7,5219 & 0,9115 \\
+2 & 0\% & 25\% & 25\% & 25\% & 25\% & 8,0566 & 1,4462 \\
+3 & 0\% & 0\% & 33\% & 33\% & 33\% & 8,7402 & 2,1298 \\
+4 & 50\% & 20\% & 10\% & 10\% & 10\% & 6,6104 & 0,0000 \\
+5 & 70\% & 0\% & 10\% & 10\% & 10\% & 7,0696 & 0,4592 \\
+6 & 20\% & 50\% & 10\% & 10\% & 10\% & 7,0034 & 0,3930 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 
 \subsection{Image with Caption}
 
 \begin{figure}[H]
-    \centering
+\centering
     % 使用智能图片插入命令
     \smartimage[0.8\textwidth]{example-image.png}{示例图片}{请将您的图片文件命名为 example-image.png 或修改图片路径}
-    \caption{Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.}
-    \label{fig:example}
+\caption{Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.}
+\label{fig:example}
 \end{figure}
 
 \section{样式包功能演示}

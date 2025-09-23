@@ -6,5 +6,3 @@ RUN apt-get update && apt-get install -y --no-install-recommends --no-install-su
     fonts-noto-cjk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-
