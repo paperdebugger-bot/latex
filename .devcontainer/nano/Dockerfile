@@ -22,7 +22,7 @@ ENV PATH="/usr/local/.TinyTeX/bin/x86_64-linux:${PATH}"
 # tectonic
 
 ARG TECTONIC_VERSION=0.15.0
-RUN wget https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz -O ${TECTONIC_VERSION}.tar.gz
+RUN wget https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz -O ${TECTONIC_VERSION}.tar.gz --no-check-certificate
 RUN tar -xzf ${TECTONIC_VERSION}.tar.gz -C /usr/local/bin/
 RUN rm ${TECTONIC_VERSION}.tar.gz
 ENV PATH="/usr/local/bin:${PATH}"
