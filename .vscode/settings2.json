@@ -1,0 +1,25 @@
+{
+    "workbench.activityBar.orientation": "vertical",
+    "latex-workshop.formatting.latex": "latexindent",
+    "files.exclude": {
+        "*.aux": true,
+        "*.bbl": true,
+        "*.blg": true,
+        "*.fdb*": true,
+        "*.fls": true,
+        "*.log": true,
+        "*.out": true,
+        "*.synctex*": true,
+        "*.xdv": true,
+        "*/*.aux": true,
+        "*/*.bbl": true,
+        "*/*.blg": true,
+        "*/*.fdb*": true,
+        "*/*.fls": true,
+        "*/*.log": true,
+        "*/*.out": true,
+        "*/*.synctex*": true,
+        "*/*.xdv": true
+    },
+    "editor.formatOnSave": true
+}

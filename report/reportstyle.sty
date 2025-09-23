@@ -8,7 +8,7 @@
 \ProvidesPackage{reportstyle}[2025/09/20 v1.1 Custom Report Style Package with CJK Support]
 
 % 必要的包
-\RequirePackage[utf8]{inputenc}
+\RequirePackage{inputenc}
 \RequirePackage[T1]{fontenc}
 
 % 中文支持
@@ -86,6 +86,9 @@
     }
 }
 
+% 添加最后一页标签的包 (需要在使用LastPage之前加载)
+\RequirePackage{lastpage}
+
 % 页面几何设置
 \geometry{
     left=2.5cm,
@@ -107,9 +110,6 @@
     \rhead{#2}%
     \cfoot{\thepage\ / \pageref*{LastPage}}%  % 显示当前页/总页数（无链接）
 }
-
-% 添加最后一页标签的包
-\RequirePackage{lastpage}
 
 % 默认页眉设置
 \setreportheader{Report}{{\today}}
