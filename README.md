@@ -4,6 +4,11 @@
 
 A comprehensive LaTeX template collection featuring report templates and presentation themes with Chinese language support.
 
+## 几种开箱方式
+full: texlive-full 版本，功能最全，镜像构建速度慢，占用10GB磁盘空间。
+lite: tinytex 最简单版本 + tectonic。缺失的包需要自己用 tlmgr 安装。
+nano: tectonic only. 镜像构建速度快，第一次编译时需要下载缺失的包，不支持一边保存一边预览，占磁盘空间最小
+
 ## 📁 项目结构 | Project Structure
 
 ```
