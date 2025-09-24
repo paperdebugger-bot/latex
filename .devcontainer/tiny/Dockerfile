@@ -3,7 +3,6 @@ FROM ubuntu:plucky
 RUN apt-get update && apt-get install -y --no-install-recommends --no-install-suggests \
     wget \
     make \
-    fonts-noto-cjk \
     libfontconfig1 \
     perl \
     perl-base \
@@ -21,15 +20,16 @@ RUN rm ${FILE_NAME}
 ENV PATH="/usr/local/.TinyTeX/bin/x86_64-linux:${PATH}"
 
 # tectonic
-
 ARG TECTONIC_VERSION=0.15.0
 RUN wget https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz -O ${TECTONIC_VERSION}.tar.gz --no-check-certificate
 RUN tar -xzf ${TECTONIC_VERSION}.tar.gz -C /usr/local/bin/
 RUN rm ${TECTONIC_VERSION}.tar.gz
 ENV PATH="/usr/local/bin:${PATH}"
 
-RUN tlmgr update --self --all
-RUN tlmgr install ctex
-RUN tlmgr install xetex latex-bin
-RUN tlmgr install fancyhdr booktabs latexindent 
-RUN fmtutil-sys --byfmt xelatex
+
+# RUN apt-get install fonts-noto-cjk
+# RUN tlmgr update --self --all
+# RUN tlmgr install ctex
+# RUN tlmgr install xetex latex-bin
+# RUN tlmgr install fancyhdr booktabs latexindent 
+# RUN fmtutil-sys --byfmt xelatex
